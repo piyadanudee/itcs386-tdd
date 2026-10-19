@@ -9,3 +9,6 @@ class Quantity:
     
     def __eq__(self, other):
         return self.amount == other.amount
+
+    def __repr__(self):
+        return f"Quantity({self.amount})"
