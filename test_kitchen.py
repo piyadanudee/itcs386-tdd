@@ -31,3 +31,6 @@ def test_multiplication_returns_a_new_quantity():
 def test_quantities_with_same_amount_are_equal():
     assert Quantity(100) == Quantity(100)
 
+
+def test_quantity_has_readable_representation():
+    assert repr(Quantity(100)) == "Quantity(100)"
