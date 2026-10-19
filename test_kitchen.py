@@ -15,3 +15,12 @@ def test_quantity_can_be_multiplied_by_another_value():
     quantity = Quantity(100)
     quantity.times(3)
     assert quantity.amount == 300
+
+
+def test_multiplication_returns_a_new_quantity():
+    quantity = Quantity(100)
+
+    result = quantity.times(3)
+
+    assert result.amount == 300
+    assert quantity.amount == 100
