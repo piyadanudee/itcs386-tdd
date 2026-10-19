@@ -51,3 +51,8 @@ def test_ounces_factory():
 def test_quantities_can_be_added():
     result = grams(100) + grams(50)
     assert result == grams(150)
+
+def test_simple_addition():
+    total = grams(200).plus(grams(300))
+    converter = Converter()
+    assert converter.reduce(total, "g") == grams(500)
