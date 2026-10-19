@@ -23,9 +23,18 @@ class Quantity:
         if self.unit != other.unit:
             raise ValueError("Cannot add quantities with different units")
         return Quantity(self.amount + other.amount, self.unit)
+
+    def plus(self, other):
+        return self + other
+
 def grams(amount):
         return Quantity(amount, "g")
 
 
 def ounces(amount):
         return Quantity(amount, "oz")
+class Converter:
+    def reduce(self, quantity, unit):
+        if quantity.unit == unit:
+            return quantity
+        raise ValueError("Unsupported unit conversion")

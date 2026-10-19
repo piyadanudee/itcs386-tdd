@@ -1,5 +1,5 @@
 
-from kitchen import Quantity, grams, ounces
+from kitchen import Quantity, grams, ounces, Converter
 
 def test_quantity_can_be_created():
     quantity = Quantity(100)
