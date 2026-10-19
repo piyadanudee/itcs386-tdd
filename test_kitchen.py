@@ -6,15 +6,17 @@ def test_quantity_can_be_created():
     quantity = Quantity(100)
     assert quantity.amount == 100
 
+
 def test_quantity_can_be_multiplied():
     quantity = Quantity(300)
-    quantity.times(2)
-    assert quantity.amount == 600
+    result = quantity.times(2)
+    assert result.amount == 600
+
 
 def test_quantity_can_be_multiplied_by_another_value():
     quantity = Quantity(100)
-    quantity.times(3)
-    assert quantity.amount == 300
+    result = quantity.times(3)
+    assert result.amount == 300
 
 
 def test_multiplication_returns_a_new_quantity():
