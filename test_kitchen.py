@@ -34,3 +34,7 @@ def test_quantities_with_same_amount_are_equal():
 
 def test_quantity_has_readable_representation():
     assert repr(Quantity(100)) == "Quantity(100)"
+
+    
+def test_quantities_with_different_units_are_not_equal():
+    assert Quantity(100, "g") != Quantity(100, "oz")
