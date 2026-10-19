@@ -10,3 +10,8 @@ def test_quantity_can_be_multiplied():
     quantity = Quantity(300)
     quantity.times(2)
     assert quantity.amount == 600
+
+def test_quantity_can_be_multiplied_by_another_value():
+    quantity = Quantity(100)
+    quantity.times(3)
+    assert quantity.amount == 300
