@@ -23,8 +23,13 @@ class Quantity:
         if self.unit != other.unit:
             raise ValueError("Cannot add quantities with different units")
         return Quantity(self.amount + other.amount, self.unit)
+    
     def plus(self, other):
         return Sum(self, other)
+
+    def reduce(self, unit):
+        return self
+
 
 def grams(amount):
         return Quantity(amount, "g")
@@ -32,11 +37,17 @@ def grams(amount):
 
 def ounces(amount):
         return Quantity(amount, "oz")
+
 class Converter:
     def reduce(self, source, unit):
-        return source
+        return source.reduce(unit)
 
 class Sum:
     def __init__(self, left, right):
         self.left = left
         self.right = right
+
+    def reduce(self, unit):
+        left = self.left.reduce(unit)
+        right = self.right.reduce(unit)
+        return left + right
