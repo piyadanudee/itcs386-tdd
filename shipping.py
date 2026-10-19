@@ -10,7 +10,7 @@ def shipping_fee(weight_kg):
     """
     if weight_kg <= 0:
         raise ValueError("weight must be positive")
-    if weight_kg < 1:
+    if weight_kg <= 1:
         return 40
     if weight_kg <= 5:
         return 60
