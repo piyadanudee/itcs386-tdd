@@ -16,3 +16,11 @@ class Quantity:
         if self.unit is None:
             return f"Quantity({self.amount})"
         return f"Quantity({self.amount}, {self.unit!r})"
+
+
+def grams(amount):
+    return Quantity(amount, "g")
+
+
+def ounces(amount):
+    return Quantity(amount, "oz")

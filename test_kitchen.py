@@ -1,6 +1,5 @@
 
-from kitchen import Quantity
-
+from kitchen import Quantity, grams, ounces
 
 def test_quantity_can_be_created():
     quantity = Quantity(100)
@@ -38,3 +37,12 @@ def test_quantity_has_readable_representation():
     
 def test_quantities_with_different_units_are_not_equal():
     assert Quantity(100, "g") != Quantity(100, "oz")
+
+def test_grams_factory():
+    quantity = grams(100)
+    assert quantity == Quantity(100, "g")
+
+
+def test_ounces_factory():
+    quantity = ounces(5)
+    assert quantity == Quantity(5, "oz")
