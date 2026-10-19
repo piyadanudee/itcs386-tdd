@@ -70,4 +70,4 @@ def test_mixed_addition():
 def test_conversion_multiplies_by_rate():
     converter = Converter()
     converter.add_rate("oz", "g", 28)
-    assert converter.reduce(ounces(2), "g") == grams(57)
+    assert converter.reduce(ounces(2), "g") == grams(56)
