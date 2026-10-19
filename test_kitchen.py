@@ -26,3 +26,8 @@ def test_multiplication_returns_a_new_quantity():
 
     assert result.amount == 300
     assert quantity.amount == 100
+
+
+def test_quantities_with_same_amount_are_equal():
+    assert Quantity(100) == Quantity(100)
+
