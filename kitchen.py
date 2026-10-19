@@ -23,9 +23,8 @@ class Quantity:
         if self.unit != other.unit:
             raise ValueError("Cannot add quantities with different units")
         return Quantity(self.amount + other.amount, self.unit)
-
     def plus(self, other):
-        return grams(500)
+        return Sum(self, other)
 
 def grams(amount):
         return Quantity(amount, "g")
@@ -37,3 +36,7 @@ class Converter:
     def reduce(self, source, unit):
         return source
 
+class Sum:
+    def __init__(self, left, right):
+        self.left = left
+        self.right = right
