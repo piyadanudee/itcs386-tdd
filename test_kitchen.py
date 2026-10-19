@@ -46,3 +46,8 @@ def test_grams_factory():
 def test_ounces_factory():
     quantity = ounces(5)
     assert quantity == Quantity(5, "oz")
+
+
+def test_quantities_can_be_added():
+    result = grams(100) + grams(50)
+    assert result == grams(150)
