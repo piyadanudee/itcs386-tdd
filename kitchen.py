@@ -17,10 +17,15 @@ class Quantity:
             return f"Quantity({self.amount})"
         return f"Quantity({self.amount}, {self.unit!r})"
 
-
+    def __add__(self, other):
+        if not isinstance(other, Quantity):
+            return NotImplemented
+        if self.unit != other.unit:
+            raise ValueError("Cannot add quantities with different units")
+        return Quantity(self.amount + other.amount, self.unit)
 def grams(amount):
-    return Quantity(amount, "g")
+        return Quantity(amount, "g")
 
 
 def ounces(amount):
-    return Quantity(amount, "oz")
+        return Quantity(amount, "oz")
