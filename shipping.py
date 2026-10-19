@@ -1,4 +1,4 @@
-
+import math
 def shipping_fee(weight_kg):
     """Return the shipping fee for a parcel.
 
@@ -14,4 +14,4 @@ def shipping_fee(weight_kg):
         return 40
     if weight_kg <= 5:
         return 60
-    return 60 + 10 * int(weight_kg - 5)
+    return 60 + 10 * math.ceil(weight_kg - 5)
